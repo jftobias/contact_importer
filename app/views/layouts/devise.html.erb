@@ -1,29 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Contact importer" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Contact importer" %>">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-</head>
-<body>
-  <header>
-    <%= render 'partials/navigation' %>
-  </header>
-    <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" %>
-  <div id="login" class="container">
-    <%= yield %>
+<% content_for :content do %>
+  <div class="container">
+    <div class="col-lg-6 align-center">
+      <p>
+        <%= yield %>
+      </p>
+    </div>
   </div>
-</body>
-</html>
-
+<% end %>
+<%= render template: "layouts/application" %>
