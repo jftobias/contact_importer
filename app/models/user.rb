@@ -8,6 +8,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :contacts
+  has_many :invalid_contacts
 
   validate :validate_username
   validates_format_of :username, with: /^[a-zA-Z0-9_.]*$/, multiline: true

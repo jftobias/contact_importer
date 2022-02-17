@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "csv"
 # Upload CSV service
 class UploadCsv
   def initialize(user, file)
@@ -21,6 +22,9 @@ class UploadCsv
       }
       contact = Contact.create hash
       hash.merge!({ message: contact.errors.full_messages })
+      if contact.errors.any?
+        InvalidContact.create hash
+      end
     end
   end
 end
