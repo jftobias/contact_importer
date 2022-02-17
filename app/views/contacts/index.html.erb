@@ -1,7 +1,6 @@
-<h1>Contacts List</h1>
-
 <div class="media">
   <div class="media-body">
+    <h1>Contacts List</h1>
     <table class="table table-hover">
       <thead>
       <tr>
@@ -29,8 +28,14 @@
       <% end %>
       </tbody>
     </table>
+  </div>
 
- 
+  <div class="field">
+    <h3> Upload CSV File </h3>
+    <%= form_tag upload_contacts_path, multipart: true do |f| %>
+      <%= file_field_tag :file %>
+      <%= submit_tag "Upload" %>
+    <% end %>
   </div>
 </div>
 

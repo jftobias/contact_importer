@@ -7,6 +7,7 @@ ruby "3.0.2"
 
 # gem 'bcrypt', '~> 3.1.7'
 gem "bootsnap", ">= 1.4.4", require: false
+gem "credit_card_validations"
 gem "devise"
 # gem 'image_processing', '~> 1.2'
 gem "jbuilder", "~> 2.7"
@@ -15,6 +16,7 @@ gem "puma", "~> 5.0"
 gem "rails", "~> 6.1.4", ">= 6.1.4.6"
 # gem 'redis', '~> 4.0'
 gem "sass-rails", ">= 6"
+gem "simple_form", "~> 5.1"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
 

@@ -11,6 +11,12 @@ class ContactsController < ApplicationController
     @contact = @user.contacts.new(contact_params)
   end
 
+  def upload
+    UploadCsv.new(current_user, params[:file]).upload
+
+    redirect_to contacts_path, notice: "Contacts Added Successfully"
+  end
+
   private
 
   def contact_params
