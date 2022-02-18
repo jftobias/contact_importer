@@ -9,6 +9,10 @@ class UploadCsv
   end
 
   def upload
+    filename = @file.original_filename
+    imported = ImportedFile.create(name: filename, user: @user)
+    counter = 0
+    imported.process
     CSV.foreach(@file.path, headers: true, header_converters: :symbol) do |row|
       hash = {
         name: row[:name],
@@ -22,7 +26,17 @@ class UploadCsv
       }
       contact = Contact.create hash
       hash.merge!({ message: contact.errors.full_messages })
-      InvalidContact.create hash if contact.errors.any?
+      if contact.errors.any?
+        InvalidContact.create hash
+      else
+        counter += 1
+      end
     end
+    if counter.zero?
+      imported.fail
+    else
+      imported.complete
+    end
+    imported.save
   end
 end

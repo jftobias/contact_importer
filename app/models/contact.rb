@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "csv"
-
 # Contact class
 class Contact < ApplicationRecord
   belongs_to :user

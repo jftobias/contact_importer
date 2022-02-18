@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :contacts do
+  resources :imported_files
+    resources :contacts do
     collection { post :upload }
   end
 
