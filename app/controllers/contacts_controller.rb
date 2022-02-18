@@ -4,7 +4,7 @@
 class ContactsController < ApplicationController
   def index
     @user = current_user
-    @contacts = current_user.contacts
+    @contacts = @user.contacts.order(:sort).paginate(page: params[:page], per_page: 20)
   end
 
   def create
@@ -12,7 +12,7 @@ class ContactsController < ApplicationController
   end
 
   def upload
-    UploadCsv.new(current_user, params[:file]).upload
+    UploadCsv.new(@user, params[:file]).upload
 
     redirect_to contacts_path, notice: "Contacts Added Successfully"
   end

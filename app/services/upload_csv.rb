@@ -16,15 +16,13 @@ class UploadCsv
         phone: row[:phone],
         address: row[:address],
         email: row[:email],
-        credit_card: row[:credit_card].to_s[-4..-1],
+        credit_card: row[:credit_card].to_s[-4..],
         franchise: CreditCardValidations::Detector.new(row[:credit_card]).brand,
         user_id: @user.id
       }
       contact = Contact.create hash
       hash.merge!({ message: contact.errors.full_messages })
-      if contact.errors.any?
-        InvalidContact.create hash
-      end
+      InvalidContact.create hash if contact.errors.any?
     end
   end
 end

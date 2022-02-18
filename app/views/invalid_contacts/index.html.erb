@@ -1,4 +1,4 @@
-<div class="media">
+<div class="container">
   <div class="media-body">
     <h1>Rejected contacts</h1>
     <table class="table table-hover">
@@ -30,5 +30,8 @@
       <% end %>
       </tbody>
     </table>
+    <div>
+      <%= will_paginate @invalid_contacts %>
+    </div>
   </div>
 </div>

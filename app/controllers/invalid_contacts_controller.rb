@@ -4,7 +4,7 @@
 class InvalidContactsController < ApplicationController
   def index
     @user = current_user
-    @invalid_contacts = current_user.invalid_contacts
+    @invalid_contacts = @user.invalid_contacts.paginate(page: params[:page], per_page: 20)
   end
 
   def create

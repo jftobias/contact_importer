@@ -11,6 +11,7 @@ gem "credit_card_validations"
 gem "devise"
 # gem 'image_processing', '~> 1.2'
 gem "jbuilder", "~> 2.7"
+gem "kaminari", "~> 1.2"
 gem "pg", "~> 1.1"
 gem "puma", "~> 5.0"
 gem "rails", "~> 6.1.4", ">= 6.1.4.6"
@@ -19,6 +20,7 @@ gem "sass-rails", ">= 6"
 gem "simple_form", "~> 5.1"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
+gem "will_paginate", "~> 3.3"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
