@@ -1,0 +1,4 @@
+<div class="container center">
+<h1> Welcome <%= current_user.username.capitalize if user_signed_in? %> </h1>
+  <p> <%= link_to "Log in to continue", new_user_session_path unless user_signed_in?%> </p>
+</div>
