@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
+  resources :imported_files
+    resources :contacts do
+    collection { post :upload }
+  end
 
-  resources :contacts
+  resources :invalid_contacts do
+    collection { post :upload }
+  end
 
   devise_for :users
   get "home/index"

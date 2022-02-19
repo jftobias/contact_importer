@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class ContactTest < ActiveSupport::TestCase
+class InvalidContactTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

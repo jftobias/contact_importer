@@ -7,6 +7,15 @@
         <li class="nav-item"><%= link_to "Home", home_index_path, class: "nav-link" %></li>
         <% if user_signed_in? %>
           <li class="nav-item">
+            <%= link_to "Contacts", contacts_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Invalid contacts", invalid_contacts_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Imported files", imported_files_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
           </li>
           <% if current_user.username %>

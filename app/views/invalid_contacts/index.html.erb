@@ -1,6 +1,6 @@
 <div class="container">
   <div class="media-body">
-    <h1>Contacts List</h1>
+    <h1>Rejected contacts</h1>
     <table class="table table-hover">
       <thead>
       <tr>
@@ -11,11 +11,12 @@
         <th> Address </th>
         <th> Credit card number </th>
         <th> Franchise </th>
+        <th> Error message </th>
       </tr>
       </thead>
       <tbody>
 
-      <% @user.contacts.each do |contact| %>
+      <% @user.invalid_contacts.each do |contact| %>
         <tr>
           <td><%= contact.name.upcase %></td> </td>
           <td><%= contact.phone %> </td>
@@ -23,21 +24,14 @@
           <td><%= contact.date_of_birth %> </td>
           <td><%= contact.address %> </td>
           <td><%= contact.credit_card %> </td>
-          <td><%= contact.franchise.upcase %> </td>
+          <td><%= contact.franchise.upcase if contact.franchise.present? %> </td>
+          <td><%= contact.message %> </td>
         </tr>
       <% end %>
       </tbody>
     </table>
     <div>
-      <%= will_paginate @contacts %>
+      <%= will_paginate @invalid_contacts %>
     </div>
-  </div>
-
-  <div class="container">
-    <h3> Upload CSV File </h3>
-    <%= form_tag upload_contacts_path, multipart: true do |f| %>
-      <%= file_field_tag :file %>
-      <%= submit_tag "Upload" %>
-    <% end %>
   </div>
 </div>
