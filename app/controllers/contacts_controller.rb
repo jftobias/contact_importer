@@ -17,6 +17,7 @@ class ContactsController < ApplicationController
 
     redirect_to contacts_path, notice: "Contacts Added Successfully"
   end
+
   private
 
   def contact_params
