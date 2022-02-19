@@ -13,10 +13,12 @@
 
   <body>
     <header>
-      <%= render 'layouts/navigation' %>
+      <%= render 'partials/navigation' %>
     </header>
     <main role="main">
       <%= content_for?(:content) ? yield(:content) : yield %>
     </main>
   </body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 </html>

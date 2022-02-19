@@ -3,13 +3,15 @@
 
 $white: white;
 $black: black;
-
+$green: green;
+$soft-green: #a9e8a6;
+$dark-green: #11765c;
 .navbar {
         margin-bottom: 0;
-        background: $black;
+        background: $dark-green;
 }
 body {
-        background: $black;
+        background: $soft-green;
         color: $white;
         font-family: 'Merriweather', sans-serif;
 }
