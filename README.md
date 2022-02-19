@@ -1,24 +1,63 @@
-# README
+# Contact Importer
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Built With
 
-Things you may want to cover:
+- Ruby v3.0.2
+- Rails 6.1.4.6
+- Rspec rails
+- Heroku
 
-* Ruby version
+## Live Demo
 
-* System dependencies
+[Live demo](https://kcontact-importer.herokuapp.com/)
 
-* Configuration
+### Prerequisites
 
-* Database creation
+- Ruby: 3.0.2
+- Rails: 6.1.4.6
 
-* Database initialization
+## Getting Started
 
-* How to run the test suite
+To clone this repository:
 
-* Services (job queues, cache servers, search engines, etc.)
+- Copy and paste this command on your terminal: <br>
+```
+git clone https://github.com/jftobias/contact_importer.git
+```
 
-* Deployment instructions
+### Setup
 
-* ...
+Run bundle for install gems with the next command:
+
+```
+bundle install
+```
+
+Run 
+```
+yarn remove bootstrap jquery popper.js
+yarn add bootstrap@next jquery @popperjs/core
+```
+### Usage
+
+Start server with:
+
+```
+rails server
+```
+
+Open `http://localhost:3000/` in your browser.
+
+### Run tests
+
+```
+    rpsec --format documentation
+```
+
+
+### Deployment
+
+Heroku
+
+---
+⌨️ con ❤️ por [jftobias](https://github.com/jftobias) 😊
