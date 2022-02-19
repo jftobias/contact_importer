@@ -1,0 +1,37 @@
+<h1>Contacts List</h1>
+
+<div class="media">
+  <div class="media-body">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th> Name </th>
+        <th> Phone </th>
+        <th> Email </th>
+        <th> Date of Birth </th>
+        <th> Address </th>
+        <th> Credit card number </th>
+        <th> Franchise </th>
+      </tr>
+      </thead>
+      <tbody>
+
+      <% @user.contacts.each do |contact| %>
+        <tr>
+          <td><%= contact.name.upcase %></td> </td>
+          <td><%= contact.phone %> </td>
+          <td><%= contact.email %> </td>
+          <td><%= contact.date_of_birth %> </td>
+          <td><%= contact.address %> </td>
+          <td><%= contact.credit_card %> </td>
+          <td><%= contact.franchise.upcase %> </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+ 
+  </div>
+</div>
+
+
